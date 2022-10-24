@@ -22,12 +22,12 @@
               <form>
 
               <div class="d-flex justify-content-center">
-              <a href="/../view/Register.php" >Register Here</button></a>
+              <a href="/view/Register.php" >Register Here</a>
 
                 </div>
                 
                 <div class="d-flex justify-content-center">
-              <a href="/../view/Login.php" >Sign in Here</button></a>
+              <a href="/view/Login.php" >Sign in Here</a>
 
                 </div>
                 
