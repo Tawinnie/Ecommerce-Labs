@@ -9,11 +9,13 @@ if (isset ($_POST['submit'])) {
     $city = $_POST['customer_city'];
     $contact = $_POST['customer_contact'];
     $password = $_POST['customer_pass'];
+    $user=1;
    
 // hashing the password before it is stored in the database
 // $password = crypt($password);
+
  $hashed_password = base64_encode($password);
- $result = getnewcustomer($fullname,$email,$contact,$country,$city,$hashed_password);
+ $result = getnewcustomer($fullname,$email,$contact,$country,$city,$hashed_password,$user_role);
  if ($result) {
     //echo "Registration successful!";
     header("Location: ../view/Login.php");

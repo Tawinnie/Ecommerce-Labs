@@ -8,19 +8,31 @@ if(isset($_POST['submit2']))
     $password=$_POST['pass'];
 
     //encrypt password to matchthe one stored in the database
-    $hash = base64_encode($password);
-
+    $hash = base64_decode($password);
    $logresult= newlogin($email, $hash);
    
-    if(!empty($logresult))
-    {
-        echo "Logged in  successful!";
+    if ($logresult==$password){
+        header("Location: ../index.php");
+       // echo "Logged in  successful!";
     }
     else
     { 
         echo "Failed to Log you in";
     }
-    header("Location: ../index.php");
+
 }
+session_start();
+//defining user role upon login to direct which page they would go to
+if ($logresult["user_role"] == 1)
+{
+    header('Location: ../Admin/add_brand.php');
+    $_SESSION["verifyrole"] = 1;
+   
+} else{
+
+   $_SESSION["verifyrole"] = 2;
+    header('Location: ../view/index.php');
+
+        }
   
 ?>
