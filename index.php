@@ -22,29 +22,15 @@
               <form>
 
               <div class="d-flex justify-content-center">
-<<<<<<< HEAD
+
                 <a href="/view/Register.php" >Register Here</a>
               </div>
-=======
-              <a href="/view/Register.php" >Register Here</a>
-
-                </div>
                 
                 <div class="d-flex justify-content-center">
               <a href="/view/Login.php" >Sign in Here</a>
-
                 </div>
->>>>>>> 07172bb4f3757483d9c552c700efcb13c9bbeef7
-                
-              <div class="d-flex justify-content-center">
-                <a href="/view/Login.php" >Sign in Here</a>
-              </div>
-              <div class="d-flex justify-content-center">
-                <a href="/view/add_brand.php" >Sign in Here</a>
-              </div>
 
-                
-               
+            
               </form>
 
             </div>
