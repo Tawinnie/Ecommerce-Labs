@@ -21,8 +21,9 @@ if(isset($_POST['submit2']))
     }
 
 }
+
 session_start();
-//defining user role upon login to direct which page they would go to
+//defining user role upon login to direct which page a user would go to
 if ($logresult["user_role"] == 1)
 {
     header('Location: ../Admin/add_brand.php');

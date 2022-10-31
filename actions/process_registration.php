@@ -25,20 +25,6 @@ if (isset ($_POST['submit'])) {
 }
 //calling the controller
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //$hash = password_hash($password,  PASSWORD_DEFAULT);
     //encrypt password
     //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
