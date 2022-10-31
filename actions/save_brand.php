@@ -1,5 +1,5 @@
 <?php 
-//when a customer clicks the register button
+//when the admin clicks the  button, to add brand
 include("../controllers/general_controller.php");
 
 if (isset ($_POST['save_brand'])) 
@@ -18,5 +18,20 @@ if (isset ($_POST['save_brand']))
  else{    
    echo "Registration Unsuccessful!";
  }
+}
+
+//editing brand
+if (isset($_POST["edit_brand"])){
+  $new_brand= $_POST["new_brand"];
+  $id=$_POST["brand_id"];
+
+  $result =newupdate($id,$brand);
+  if($result)
+  {
+    header("Location: ../Admin/brand.php");
+  }else {
+    echo "Failed";
+  }
+
 }
 ?>

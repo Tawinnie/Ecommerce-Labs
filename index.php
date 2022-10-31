@@ -22,6 +22,7 @@
               <form>
 
               <div class="d-flex justify-content-center">
+<<<<<<< HEAD
                 <a href="/view/Register.php" >Register Here</a>
               </div>
 
@@ -32,6 +33,17 @@
              
                 
                
+=======
+
+                <a href="/view/Register.php" >Register Here</a>
+              </div>
+                
+                <div class="d-flex justify-content-center">
+              <a href="/view/Login.php" >Sign in Here</a>
+                </div>
+
+            
+>>>>>>> 2190642afe3c7c96f8e177a89cb995e3a1d5e1de
               </form>
 
             </div>
@@ -41,5 +53,5 @@
     </div>
   </div>
 </section>
-
+  </body>
 </html>

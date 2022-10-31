@@ -24,6 +24,7 @@ class db_connection
 		//connection
 		$this->db = mysqli_connect(SERVERNAME,HOSTNAME,PASSWORD,DATABASE);
 		
+		
 		//test the connection
 		if (mysqli_connect_errno()) {
 			return false;

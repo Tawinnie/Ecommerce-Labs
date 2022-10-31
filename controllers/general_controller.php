@@ -34,11 +34,16 @@ function newbrand($brand)
     $brand = $newbrand->addbrand($brand);
     return($brand);
 }
-function newdisplay($id,$brand){
+function newdisplay(){
     $display = new Brand();
-    $displaybrand =$display->display($id,$brand);
+    $displaybrand =$display->display();
     return($displaybrand);
 }
 
+function newupdate($id,$brand){
+    $update= new Brand();
+    $updatebrand = $update->updatebrand($id,$brand);
+    return($updatebrand);
+}
 ?>
 ?>
