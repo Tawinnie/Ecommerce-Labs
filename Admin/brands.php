@@ -1,7 +1,6 @@
 
 <?php ?>
 <!DOCTYPE html>
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -32,17 +31,17 @@
 						<!-- <label class="form-label" for="typeEmailX">Brand</label> -->
 					</div>
                   <!-- editi brand button-->
-                 <div class="form-outline form-white mb-4">
+                 <!--<div class="form-outline form-white mb-4">
 
                     <button class="btn btn-outline-light btn-lg px-5" name="edit_brand" type="submit">Edit Brand</button>
-					</div>
+					</div>-->
 
 
-					<div class="d-flex justify-content-center text-center mt-4 pt-1">
+				<!--	<div class="d-flex justify-content-center text-center mt-4 pt-1">
 						<a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
 						<a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
 						<a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-					</div>
+					</div>-->
 				</form>
        </div>
        <table class="table table-dark">
@@ -52,7 +51,7 @@
         <th scope="col">Update Brands</th>
       </tr>
       <?php
-        include ("../controllers/general_controller.php");
+        include ("../controllers/product_controller.php");
         $data = newdisplay();
         foreach($data as $key => $value) {
             echo '<tr>
@@ -60,10 +59,10 @@
                         '. $value["brand_name"] .'        
                     </td>
                     <td>
-                        <form action="../actions/save_brand.php" method="POST">
+                        <form action="../actions/edit_brand.php" method="POST">
                             <input type="text" name="new_brand" required>
                             <input type="hidden" name="brand_id" value="'. $value['brand_id'] .'" required>
-                            <input type="submit" name="update_brand">
+                            <input type="submit" name="update_brand" value="Update">
                         </form>
                     </td>
                 </tr>';
@@ -88,5 +87,4 @@
 </section>
 </body>
 </html>
-<html>
 <head>

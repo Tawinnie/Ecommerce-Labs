@@ -1,6 +1,8 @@
 <?php 
 //when the admin clicks the  button, to add brand
-include("../controllers/general_controller.php");
+//include("../controllers/general_controller.php");
+include("../controllers/product_controller.php");
+session_start();
 
 if (isset ($_POST['save_brand'])) 
 {
@@ -8,15 +10,15 @@ if (isset ($_POST['save_brand']))
    
  $result = newbrand($brand);
  if ($result) 
-   {
-      session_start();
-      $select= newdisplay($id,$brand);
-      echo " Brand added successfully";
-      //echo "Registration successful!";
+   {   
+
+      // $select= newdisplay($id,$brand);
+      $_SESSION['adb'] = "<script>alert('You will be asked to add a brand. Click ok to continue')</script>";
+      // echo "Registration successful!";
       header("Location: ../Admin/add_brand.php");
    }
  else{    
-   echo "Registration Unsuccessful!";
+  $_SESSION['adb'] = "<script>alert('Brand addition unsuccessful')</script>";
  }
 }
 

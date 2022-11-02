@@ -13,12 +13,12 @@ class Brand extends db_connection
       }
 
     function display(){
-        $select= "SELECT * FROM FROM `brands`";
+        $select= "SELECT * FROM `brands`";
         return $this->db_fetch_all($select);
     }
     
     function updatebrand($id,$brand){
-      $update = "UPDATE `brands` SET `brand_name`='$brand' WHERE brand_id=$id";
+      $update = "UPDATE `brands` SET `brand_name`='$brand' WHERE brand_id='$id'";
       return $this->db_query($update);
     }
 }
