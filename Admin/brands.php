@@ -21,16 +21,21 @@
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
-              <h2 class="fw-bold mb-2 text-uppercase">BRANDS</h2>            
+              <h2 class="fw-bold mb-2 text-uppercase">BRANDS MANAGEMENT</h2>            
 				<form action="../actions/save_brand.php" method="POST">
 
 					<div class="form-outline form-white mb-4">
-                    <button class="btn btn-outline-light btn-lg px-5" name="save_brand" type="submit">Add Brand</button>
+                   <!-- <button class="btn btn-outline-light btn-lg px-5" name="save_brand" type="submit">Add Brand</button>-->
+
 
 						<!--<input type="text" name="brand_name" id="typeEmailX" placeholder="Name of Brand" class="form-control form-control-lg" /> -->
 						<!-- <label class="form-label" for="typeEmailX">Brand</label> -->
 					</div>
-          
+          <div class="d-flex justify-content-center">
+                   <a href="add_brand.php" >update brands here</a>
+              </div>
+
+
                   <!-- editi brand button-->
                  <!--<div class="form-outline form-white mb-4">
 
