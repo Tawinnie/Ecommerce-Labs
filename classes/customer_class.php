@@ -7,7 +7,7 @@ class Customer extends db_connection{
     function getcustomersdata($fullname,$email,$contact,$country,$city,$password,$user_role){
     //function to add the user into the database
         $sql= "INSERT INTO `customer`( `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`,`user_role`) 
-        VALUES ('$fullname','$email','$password','$country','$city','$contact',$user_role)";
+        VALUES ('$fullname','$email','$password','$country','$city','$contact',0)";
             return $this->db_query($sql);
     }
 

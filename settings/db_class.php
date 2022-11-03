@@ -49,7 +49,7 @@ class db_connection
 		}
 
 		//run query 
-		$this->results = mysqli_query($this->db,$sqlQuery);
+		$this->results = mysqli_query($this->db,$sqlQuery); 
 		
 		if ($this->results == false) {
 			return false;

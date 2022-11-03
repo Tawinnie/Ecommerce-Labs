@@ -9,7 +9,7 @@ if (isset ($_POST['submit'])) {
     $city = $_POST['customer_city'];
     $contact = $_POST['customer_contact'];
     $password = $_POST['customer_pass'];
-    $user_role=1;
+    $user_role=0;
    
 // hashing the password before it is stored in the database
 // $password = crypt($password);

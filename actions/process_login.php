@@ -8,11 +8,11 @@ if(isset($_POST['submit2']))
     $password=$_POST['pass'];
 
     //encrypt password to matchthe one stored in the database
-    $hash = base64_decode($password);
+   $hash = base64_decode($password);
    $logresult= newlogin($email, $hash);
    
     if ($logresult==$password){
-        header("Location: ../index.php");
+        header("Location: ../view/homepage.php");
        // echo "Logged in  successful!";
     }
     else
@@ -31,8 +31,8 @@ if ($logresult["user_role"] == 1)
    
 } else{
 
-   $_SESSION["verifyrole"] = 2;
-    header('Location: ../view/index.php');
+   $_SESSION["verifyrole"] = 0;
+    header('Location: ../view/homepage.php');
 
         }
   

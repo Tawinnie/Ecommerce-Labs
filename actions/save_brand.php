@@ -15,7 +15,7 @@ if (isset ($_POST['save_brand']))
       // $select= newdisplay($id,$brand);
       $_SESSION['adb'] = "<script>alert('You will be asked to add a brand. Click ok to continue')</script>";
       // echo "Registration successful!";
-      header("Location: ../Admin/add_brand.php");
+      header("Location: ../Admin/brands.php");
    }
  else{    
   $_SESSION['adb'] = "<script>alert('Brand addition unsuccessful')</script>";
