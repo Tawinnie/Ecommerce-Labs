@@ -36,6 +36,10 @@ echo $_SESSION['adb'];
 
 					<button class="btn btn-outline-light btn-lg px-5" name="save_brand" type="submit">Save Brand</button>
 
+          <div class="d-flex justify-content-center">
+                   <a href="add_brand.php" >update brands here</a>
+              </div>
+
 			<!--		<div class="d-flex justify-content-center text-center mt-4 pt-1">
 						<a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
 						<a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>

@@ -31,9 +31,9 @@
 						<!--<input type="text" name="brand_name" id="typeEmailX" placeholder="Name of Brand" class="form-control form-control-lg" /> -->
 						<!-- <label class="form-label" for="typeEmailX">Brand</label> -->
 					</div>
-          <div class="d-flex justify-content-center">
+          <!-- <div class="d-flex justify-content-center">
                    <a href="add_brand.php" >update brands here</a>
-              </div>
+              </div> -->
 
 
                   <!-- editi brand button-->
