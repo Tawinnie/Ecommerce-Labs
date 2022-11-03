@@ -38,6 +38,8 @@ echo $_SESSION['adb'];
 
           <div class="d-flex justify-content-center">
                    <a href="add_brand.php" >update brands here</a>
+                   <a href="add_category.php" >Manage Categories</a>
+
               </div>
 
 			<!--		<div class="d-flex justify-content-center text-center mt-4 pt-1">

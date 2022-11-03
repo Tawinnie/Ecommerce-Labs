@@ -25,7 +25,7 @@
 				<form action="../Admin/add_category.php" method="POST">
 
 					<div class="form-outline form-white mb-4">
-                    <button class="btn btn-outline-light btn-lg px-5" name="add_category" type="submit">Add Category</button>
+                    <!-- <button class="btn btn-outline-light btn-lg px-5" name="add_category" type="submit">Add Category</button> -->
 
 						<!--<input type="text" name="brand_name" id="typeEmailX" placeholder="Name of Brand" class="form-control form-control-lg" /> -->
 						<!-- <label class="form-label" for="typeEmailX">Brand</label> -->
