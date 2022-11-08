@@ -21,11 +21,11 @@
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
-              <h2 class="fw-bold mb-2 text-uppercase">BRANDS MANAGEMENT</h2>            
-				<form action="add_brand.php" method="POST">
+              <h2 class="fw-bold mb-2 text-uppercase">Product Management</h2>            
+				<form action="add_product.php" method="POST">
 
 					<div class="form-outline form-white mb-4">
-                   <button class="btn btn-outline-light btn-lg px-5" name="save_brand" type="submit">Add Brand</button>
+                   <button class="btn btn-outline-light btn-lg px-5" name="save_product" type="submit">Add Product</button>
 
 
 						<!--<input type="text" name="brand_name" id="typeEmailX" placeholder="Name of Brand" class="form-control form-control-lg" /> -->
@@ -53,30 +53,38 @@
        <table class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">Brands</th>
-        <th scope="col">Update Brands</th>
+        <th scope="col">Product Category</th>
+        <th scope="col">Product Brand</th>
+        <th scope="col">Product Title</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Product Description</th>
+        <th scope="col">Product Image</th>
+        <th scope="col">Product Keywords</th>
+        <th scope="col">Product Edit</th>
       </tr>
       <?php
-        include ("../controllers/product_controller.php");
-        $data = newdisplay();
+        //include ("../controllers/product_controller.php");
+        include ("../functions/general_function.php");
+
+        $data = selectallproducts_ctr();
         foreach($data as $key => $value) {
             echo '<tr>
                     <td>
-                        '. $value["brand_name"] .'        
-                    </td>
+                        '. $value["product_cat"] .'</td>
+                        <td>    '. $value["product_brand"].'   </td>     
+                        <td>'. $value["product_title"].'        </td>
+                        <td>'. $value["product_price"].'    </td>
+                        <td>'. $value["product_desc"].' </td>
+                        <td>'. $value["product_image"].' </td>
+                        <td>'. $value["product_keywords"].'   </td>  
                     <td>
-                        <form action="../actions/edit_brand.php" method="POST">
-                            <input type="text" name="new_brand" required>
-                            <input type="hidden" name="brand_id" value="'. $value['brand_id'] .'" required>
-                            <input type="submit" name="update_brand" value="Update">
-                        </form>
+                    <a href="product_edit.php?id='.$value["product_id"].'">Edit</a>
                     </td>
                 </tr>';
         }
       ?>
     </thead>
     <tbody>
-
    
     </tbody>
   </table>
@@ -92,5 +100,6 @@
   </div>
 </section>
 </body>
+</head>
 </html>
-<head>
+

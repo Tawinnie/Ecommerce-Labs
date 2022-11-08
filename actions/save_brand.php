@@ -4,7 +4,7 @@
 include("../controllers/product_controller.php");
 session_start();
 
-if (isset ($_POST['save_brand'])) 
+if (isset($_POST['save_brand'])) 
 {
     $brand = $_POST['brand_name'];
    
@@ -22,18 +22,18 @@ if (isset ($_POST['save_brand']))
  }
 }
 
-//editing brand
-if (isset($_POST["edit_brand"])){
-  $new_brand= $_POST["new_brand"];
-  $id=$_POST["brand_id"];
+// //editing brand
+// if (isset($_POST["edit_brand"])){
+//   $new_brand= $_POST["new_brand"];
+//   $id=$_POST["brand_id"];
 
-  $result =newupdate($id,$brand);
-  if($result)
-  {
-    header("Location: ../Admin/brand.php");
-  }else {
-    echo "Failed";
-  }
+//   $result =newupdate($id,$brand);
+//   if($result)
+//   {
+//     header("Location: ../Admin/brand.php");
+//   }else {
+//     echo "Failed";
+//   }
 
-}
+// }
 ?>

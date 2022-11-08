@@ -28,8 +28,6 @@
                 <div class="d-flex justify-content-center">
               <a href="./view/Login.php" >Sign in Here</a>
                 </div>
-
-            
               </form>
 
             </div>

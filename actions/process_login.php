@@ -12,6 +12,7 @@ if(isset($_POST['submit2']))
    $logresult= newlogin($email, $hash);
    
     if ($logresult==$password){
+        //go to manage products if not proceed to homepage
         header("Location: ../view/homepage.php");
        // echo "Logged in  successful!";
     }
