@@ -50,7 +50,7 @@
 					</div>-->
 				</form>
        </div>
-       <table class="table table-dark">
+       <!-- <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">Product Category</th>
@@ -62,32 +62,32 @@
         <th scope="col">Product Keywords</th>
         <th scope="col">Product Edit</th>
       </tr>
-      <?php
+      //<?php
         //include ("../controllers/product_controller.php");
-        include ("../functions/general_function.php");
+        // include ("../functions/general_function.php");
 
-        $data = selectallproducts_ctr();
-        foreach($data as $key => $value) {
-            echo '<tr>
-                    <td>
-                        '. $value["product_cat"] .'</td>
-                        <td>    '. $value["product_brand"].'   </td>     
-                        <td>'. $value["product_title"].'        </td>
-                        <td>'. $value["product_price"].'    </td>
-                        <td>'. $value["product_desc"].' </td>
-                        <td>'. $value["product_image"].' </td>
-                        <td>'. $value["product_keywords"].'   </td>  
-                    <td>
-                    <a href="product_edit.php?id='.$value["product_id"].'">Edit</a>
-                    </td>
-                </tr>';
-        }
+        // $data = selectallproducts_ctr();
+        // foreach($data as $key => $value) {
+        //     echo '<tr>
+        //             <td>
+        //                 '. $value["product_cat"] .'</td>
+        //                 <td>    '. $value["product_brand"].'   </td>     
+        //                 <td>'. $value["product_title"].'        </td>
+        //                 <td>'. $value["product_price"].'    </td>
+        //                 <td>'. $value["product_desc"].' </td>
+        //                 <td>'. $value["product_image"].' </td>
+        //                 <td>'. $value["product_keywords"].'   </td>  
+        //             <td>
+        //             <a href="product_edit.php?id='.$value["product_id"].'">Edit</a>
+        //             </td>
+        //         </tr>';
+        //}
       ?>
     </thead>
     <tbody>
    
     </tbody>
-  </table>
+  </table> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 

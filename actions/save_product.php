@@ -20,7 +20,7 @@ if (isset($_POST['submit']))
       // $select= newdisplay($id,$brand);
      // $_SESSION['product'] = "<script>alert('You will be asked to add a category. Click ok to continue')</script>";
       // echo "Registration successful!";
-      header("Location: ../view/product.php");
+      header("Location: ../view/viewproducts.php");
    }else{    
   $_SESSION['product'] = "<script>alert('Category addition unsuccessful')</script>";
  }
