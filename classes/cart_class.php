@@ -1,5 +1,5 @@
 <?php
-
+//this is add to cart vomment
 //class
 require('../settings/db_class.php');
 
