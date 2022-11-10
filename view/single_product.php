@@ -18,6 +18,6 @@
     <p>Category: <?php echo $product["product_cat"] ?></p>
     <p>Description: <?php echo $product["product_desc"] ?></p>
     <p>Keywords: <?php echo $product["product_keywords"] ?></p>
-    <button>Add to Cart</button>
+    <button name="add_to_cart">Add to Cart</button>
 </body>
 </html>

@@ -30,7 +30,7 @@
                     <td>'. $value["product_price"] .'</td>
                     <td>'. $value["product_image"] .'</td>
                     <td><a href="single_product.php?pid='. $value["product_id"] .'">View</a></td>
-                    <td><button>Buy</button></td>
+                    <td><button name="add_to_cart">Add to Cart</button></td>
                 </tr>';
         }
                 ?>
