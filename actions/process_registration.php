@@ -10,6 +10,7 @@ if (isset ($_POST['submit'])) {
     $contact = $_POST['customer_contact'];
     $password = $_POST['customer_pass'];
     $user_role=0;
+    // $mi=0;
    
 // hashing the password before it is stored in the database
 // $password = crypt($password);
