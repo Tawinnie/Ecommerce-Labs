@@ -20,13 +20,13 @@ function verifyemail($fullname,$email,$contact,$country,$city,$password)
 }
 //function for login
 function newlogin($email,$password)
-{
+{ 
     $newlog =new Customer();
     $login = $newlog->logcustomer($email,$password);
     return($login);
 }
 
-//This is Mr Sampah
+//This is Mr Sampah's code
 //save product controller
 
 // function save_product_ctr($categories,$brand,$title,$price){

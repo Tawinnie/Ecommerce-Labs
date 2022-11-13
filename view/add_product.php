@@ -31,7 +31,7 @@ session_start();
 
               <h2 class="fw-bold mb-2 text-uppercase">Add Product</h2>
               <!-- <p class="text-white-50 mb-5">Please enter your brand name</p> -->
-    <form action="../actions/save_product.php" method="POST">
+    <form action="../actions/save_product.php" method="POST" enctype="multipart/form-data">
         <div>
          <label for="pcat">Category:</label><br>
                 <select name="pcat" id="mycat">
@@ -71,7 +71,7 @@ session_start();
 
         <div>
             <label for="image">Add Image:</label><br>
-            <input type="text" id=pimage name="product_image" placeholder="Add Product Image">
+            <input type="file" id=pimage name="product_image" placeholder="Add Product Image">
         </div>
 
   

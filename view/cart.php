@@ -1,62 +1,82 @@
+<?php 
+session_start();
+require("../functions/cart_function.php");
+require("../controllers/cart_controller.php");
+$allproducts =  view_your_cart_ctrl($_SESSION["customer_id"]);
+$ip_address= get_ip_address();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/cart.css">
+    <title>Cart</title>
 </head>
 <body>
-<div class="cart content-wrapper">
-    <h1>Shopping Cart</h1>
-    <form action="index.php?page=cart" method="post">
-        <table>
-            <thead>
-                <tr>
-                    <td colspan="2">Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Total</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if (empty($products)): ?>
-                <tr>
-                    <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
-                </tr>
-                <?php else: ?>
-                <?php foreach ($products as $product): ?>
-                <tr>
-                    <td class="img">
-                        <a href="index.php?page=product&id=<?=$product['id']?>">
-                            <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
-                        <br>
-                        <a href="index.php?page=cart&remove=<?=$product['id']?>" class="remove">Remove</a>
-                    </td>
-                    <td class="price">&dollar;<?=$product['price']?></td>
-                    <td class="quantity">
-                        <input type="number" name="quantity-<?=$product['id']?>" value="<?=$products_in_cart[$product['id']]?>" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-                    </td>
-                    <td class="price">&dollar;<?=$product['price'] * $products_in_cart[$product['id']]?></td>
-                </tr>
-                <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
-        <!-- <div class="subtotal">
-            <span class="text">Subtotal</span>
-            <span class="price">&dollar;<?=$subtotal?></span>
-        </div> -->
-        <div class="buttons">
-            <input type="submit" value="Update" name="update">
-            <input type="submit" value="Place Order" name="placeorder">
-        </div>
-    </form>
-</div>
+
+<!-- <nav class="navbar navbar-light bg-light justify-content-between">
+      <button type="button" onclick="window.location.href='all_products.php'" class="btn btn-warning">CONTINUE SHOPPING</button><br>
+      <button type="button" onclick="window.location.href='../index.php'" class="btn btn-success">PROCEED TO PAYMENT</button>
+      <button type="button" onclick="window.location.href='payment.php' "class="btn btn-success">SUB TOTAL </button><br> 
+      <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+          <div class="container d-flex align-items-center">
+              </header>
+        </nav> -->
+
+<h1>Cart Items</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Update Quantity</th>
+            <th scope="col">Remove from Cart</th>
+          </tr>
+        </thead>
+        <tbody>
+<?php
+
+      foreach($allproducts as $key => $value)
+      {
+            echo '
+        <tr>
+            <td>' .$value["product_title"] . '</td>
+            <td>' .$value["product_price"] . '</td>
+            <td>' .$value["qty"] . '</td>
+            <td>'. $value["qty"] * $value["product_price"] .' </td>
+
+          <td>
+              <form class="form-inline" method="POST" action="../actions/manage_quantity_cart.php">
+                  <input class="form-control mr-sm-2" type="hidden" value="'.$ip_address.'" name="ip">
+                  <input class="form-control mr-sm-2" type="hidden" value="'. $_SESSION["customer_id"].'" name="customer_id">
+                  <input class="form-control mr-sm-2" type="hidden" name="product_id" value =" '.$value["product_id"].'">
+                  <input class="form-control mr-sm-2" name="quantity" type="number" placeholder="Quantity" aria-label="Quantity">
+                  <input type="submit" name="manage_cart" value="Update Quantity">
+              </form>
+          </td>
+            
+          <td>
+              <form class="form-inline" method="POST" action="../actions/remove_from_cart.php">
+                  <input class="form-control mr-sm-2" type="hidden" value="'. $_SESSION["customer_id"].'" name="customer_id">
+                  <input class="form-control mr-sm-2" type="hidden" name="product_id" value =" '.$value["product_id"].'" >
+                  <input type="submit" name="remove" value="Remove">
+              </form>
+          </td>
+
+         <br>
+
+        </tr> ';
+          }
+          ?>
+          
 </body>
 </html>

@@ -34,5 +34,5 @@ function get_all_brands_function(){
 
 }
 }
-
+  
 ?>

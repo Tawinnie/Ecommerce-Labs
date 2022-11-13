@@ -1,24 +1,27 @@
 <?php
-
-include ('../controllers/product_controller.php');
+include "../controllers/cart_controller.php";
 // check if button is clicked
-//editing brand
-if (isset($_POST["add_to_cart"])){
-    $id=$_POST["product_id"];
-    $quantity= $_POST["product"];
-    $ip_address= $_POST["ip_address"];
-    $customer_id = $_POST["customer_id"];
+if(isset($_POST['add_to_cart'])){
+    // grab form data
+    $ip_address = $_POST['ip'];
+    $customer_id = $_POST['customer_id'];
+    $product_id = $_POST['product_id'];
+    $qty = $_POST['quantity'];
 
-    //checking for duplicare before adding to cart
+    if ($qty == null) {
+      $qty = 1;
+    }
 
-  $result =newupdate($id,$new_brand);
-  if($result)
-  {
-    session_start();
-        $_SESSION["upadte_brand"] = true;
-    header("Location: ../Admin/brands.php");
-  }else {
-    echo "Failed";
-  }
-
+    $check_duplicate = viewcart_ctrl($product_id,$customer_id);
+    if ($check_duplicate == false)
+        insert_into_cart_ctrl($product_id, $ip_address, $customer_id, $qty);
+    else {
+        $qty = $qty + $check_duplicate["qty"];
+        update_cart_ctrl($product_id, $customer_id, $qty);
+    }
+    header("location: ../view/all_products.php");
+    
 }
+
+
+?>
