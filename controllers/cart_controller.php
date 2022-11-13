@@ -13,11 +13,12 @@ function viewcart_ctrl($product_id,$customer_id){
     $newdata = new Cart();
      return $newdata->view_cart_class($product_id,$customer_id);
 }
+//view your cart
 function view_your_cart_ctrl($customer_id){
     $newdata = new Cart();
      return $newdata->view_your_cart($customer_id);
 }
-
+//view your cart
 function view_your_items_ctrl($customer_id){
     $newdata = new Cart();
      return $newdata->view_your_items($customer_id);

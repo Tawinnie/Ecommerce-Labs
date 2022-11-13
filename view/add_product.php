@@ -80,7 +80,7 @@ session_start();
         <!-- <input type="submit" id="submitting" name="submit" value="Save Product"> -->
 
         <div class="d-flex justify-content-center">
-              <a href="product.php" >update products here</a>
+              <a href="viewproducts.php" >update products here</a>
 
         </div>
 
